@@ -16,3 +16,7 @@ version = "0.0.1"
 dependencies = [
     "jinja2"
 ]
+
+[[tool.pydoc-markdown.loaders]]
+type = "python"
+search_path = [ "./src" ]
