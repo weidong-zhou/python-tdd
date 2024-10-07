@@ -44,7 +44,7 @@ class booking_flow ():
             if re.search('^\\d+$', ans):
                 self.num_ticket = int(ans)
                 if self.num_ticket > available_seat:
-                    print("Sorry, there are only {} seats available-xxxx".format(
+                    print("Sorry, there are only {} seats available".format(
                         available_seat))
                     continue
                 print("Sucessfully reserved {} tickets".format(self.cinema.title))

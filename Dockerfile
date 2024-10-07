@@ -1,4 +1,4 @@
-FROM python:3.12.3-alpine
+FROM python:alpine
 
 
 #docker build . --build-arg APP_VERSION=0.1.0
