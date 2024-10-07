@@ -2,6 +2,64 @@
 
 # booking\_flow
 
+<a id="booking_flow.booking_flow"></a>
+
+## booking\_flow Objects
+
+```python
+class booking_flow()
+```
+
+<a id="booking_flow.booking_flow.main"></a>
+
+#### main
+
+```python
+def main()
+```
+
+Main entry point
+
+<a id="booking_flow.booking_flow.get_cinema_params"></a>
+
+#### get\_cinema\_params
+
+```python
+def get_cinema_params()
+```
+
+Get input for cinema parameters
+
+<a id="booking_flow.booking_flow.new_booking"></a>
+
+#### new\_booking
+
+```python
+def new_booking()
+```
+
+Handle new booking request
+
+<a id="booking_flow.booking_flow.review_booking"></a>
+
+#### review\_booking
+
+```python
+def review_booking()
+```
+
+Review and save booking, allow different starting seat postion
+
+<a id="booking_flow.booking_flow.get_booking"></a>
+
+#### get\_booking
+
+```python
+def get_booking()
+```
+
+Display booking
+
 <a id="__init__"></a>
 
 # \_\_init\_\_

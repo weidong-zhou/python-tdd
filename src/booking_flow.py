@@ -7,6 +7,9 @@ import re
 class booking_flow ():
 
     def main(self):
+        """
+        Main entry point
+        """
         self.get_cinema_params()
         while True:
             # opt=get_valid_input("Get from J2", ["1","2","3"])
@@ -19,6 +22,9 @@ class booking_flow ():
                 break
 
     def get_cinema_params(self):
+        """
+        Get input for cinema parameters
+        """
         title, row, col = ["", 0, 0]
         while True:
             ans = input(
@@ -35,6 +41,9 @@ class booking_flow ():
         self.cinema = cinema(title=title, row=row, col=col)
 
     def new_booking(self):
+        """
+        Handle new booking request
+        """
         booking_id = self.cinema.booking_id
         available_seat = self.cinema.seat_available()
 
@@ -69,6 +78,9 @@ class booking_flow ():
                 break
 
     def review_booking(self):
+        """
+        Review and save booking, allow different starting seat postion
+        """
         booking_id = self.cinema.booking_id
         available_seat = self.cinema.seat_available()
 
@@ -102,6 +114,9 @@ class booking_flow ():
                 break
 
     def get_booking(self):
+        """
+        Display booking 
+        """
         booking_id = self.cinema.booking_id
         while True:
             ans = input(
@@ -124,3 +139,8 @@ class booking_flow ():
                 print("Booking id: GIC{:04d}".format(booking_id))
                 print("Selected Seats:")
                 print(print_map(self.cinema, map_mode=1, selected=self.booking_map))
+
+
+if __name__ == "__main__":
+    b1 = booking_flow()
+    b1.main()
