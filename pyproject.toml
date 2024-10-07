@@ -1,0 +1,16 @@
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]
+pythonpath = "./src/"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gicinema"
+version = "0.0.1"
+dependencies = [
+    "jinja2",
+]

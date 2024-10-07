@@ -1,0 +1,43 @@
+{% if map_mode != 0 -%}
+{# Header #}
+{% for c in range(0, ((col*3+3)-11)//2) -%} {{ " " -}}
+{% endfor -%}
+{{ "S C R E E N " -}}
+{% for c in range(0, ((col*3+3)-11)//2) -%} {{ " " -}}
+{% endfor %}
+
+{# Map -#}
+{% for c in range(0, col*3+3) -%} {{ "-" -}}
+{% endfor %}    
+{% for r in range(0, row) -%}
+{{ "ABCDEFGHIJKLMNOPQRSTUVWXYZ"[row-r-1] -}}{{ "  " -}}
+{% for c in range(0, col) -%}
+    {% if (map_mode==1) -%}
+        {% if (selected[row-r-1][c]["booking"] == "O") -%}
+            {% set mark = "O" -%}
+        {% elif cinema_map[row-r-1][c]["booking"] is none -%}
+            {% set mark = "." -%}
+        {% else -%}
+            {% set mark = "#" -%}
+        {% endif -%}
+    {% else -%}
+        {% if cinema_map[row-r-1][c]["booking"] is none -%}
+            {% set mark = "." -%}
+        {% elif cinema_map[row-r-1][c]["booking"] == booking_id -%}
+            {% set mark = "O" -%}
+        {% else -%}
+            {% set mark = "#" -%}
+        {% endif -%}
+    {% endif -%}
+{{ '%-3s' | format( mark) -}} 
+{% endfor %}  
+{% endfor -%}   
+
+{{ "   " -}}{% for c in range(0, col) %}{{ '%-3d' | format( c+1) -}} 
+{% endfor -%} 
+
+{% for r in cinema_map -%}
+{% for c in r -%}
+{% endfor -%} 
+{% endfor %} 
+{% endif -%}
