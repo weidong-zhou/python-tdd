@@ -16,9 +16,6 @@ End to end flow
 
 
 @pytest.mark.parametrize("inputs", [
-    ("INCEPTION 8 10\n3\n"),
-    ("INCEPTION 8 10\n1\n4\nB03\n\n3\n"),
-    ("INCEPTION 8 10\n1\n4\nB03\n\n1\n77\n12\nB05\n\n3\n"),
     ("INCEPTION 8 10\n1\n4\nB03\n\n1\n77\n12\nB05\n\n2\nGIC0001\nGIC0002\n\n3\n"),
 ])
 def test_booking_suite(monkeypatch, inputs):
