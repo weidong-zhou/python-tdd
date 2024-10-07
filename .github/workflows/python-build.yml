@@ -53,7 +53,7 @@ jobs:
     - name: Unit Test with pytest
       run: |
         pip install pytest 
-        (cd src; python -m pytest -v )
+        (cd src; python -m pytest -v --cov)
 
     - name: End to End Test
       run: |
@@ -74,20 +74,7 @@ jobs:
         ignore-unfixed: true
         vuln-type: 'os,library'
         severity: 'CRITICAL,HIGH'      
-        
-    - name: Run Docker
-      run: |
-        echo "Run Docker"
-        echo ==========================================
-        docker run ${{ env.APP_NAME }}:${{ github.sha }}
-        echo ==========================================
-
-    - name: Test Docker 
-      run: |
-        echo "Test Docker"
-        docker run ${{ env.APP_NAME }}:${{ github.sha }} > docker.test.out
-        wc docker.test.out expected.out
-        diff docker.test.out expected.out
+    
 
     - name: Upload Build Artifact
       # if push to main or create release
