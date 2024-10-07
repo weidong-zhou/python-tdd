@@ -20,11 +20,3 @@ dependencies = [
 [[tool.pydoc-markdown.loaders]]
 type = "python"
 search_path = [ "./src" ]
-
-
-
-[tool.setuptools.packages.find]
-where = ["."]
-
-[tool.setuptools.package-data]
-src = ["*.j2", "*.py"]
