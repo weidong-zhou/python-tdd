@@ -55,12 +55,12 @@ jobs:
     - name: Unit Test with pytest
       run: |
         pip install pytest 
-        (cd src; python -m pytest -v --cov)
+        python -m pytest -v --cov
 
     - name: End to End Test
       run: |
         echo "Test locally"
-        (cd src; python -m pytest -s tests/test_booking_end_to_end.py)
+        python -m pytest -s tests/test_booking_end_to_end.py
 
     - name: Build Docker
       run: |
