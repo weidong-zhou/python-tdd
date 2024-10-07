@@ -21,11 +21,10 @@ dependencies = [
 type = "python"
 search_path = [ "./src" ]
 
-[tool.setuptools]
-include-package-data = true
+
 
 [tool.setuptools.packages.find]
-where = ["./src"]
+where = ["."]
 
 [tool.setuptools.package-data]
-templates = ["*.j2"]
+src = ["*.j2", "*.py"]
