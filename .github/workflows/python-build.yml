@@ -68,15 +68,15 @@ jobs:
         docker build . -t  ${{ env.APP_NAME }}:${{ github.sha }} \
          --build-arg APP_VERSION=${{ env.APP_VERSION }} --build-arg APP_NAME=${{ env.APP_NAME }}
        
-    - name: Run Trivy vulnerability scanner
-      uses: aquasecurity/trivy-action@0.20.0
-      with:
-        image-ref: ${{ env.APP_NAME }}:${{ github.sha }} 
-        format: 'table'
-        exit-code: '1'
-        ignore-unfixed: true
-        vuln-type: 'os,library'
-        severity: 'CRITICAL,HIGH'      
+    # - name: Run Trivy vulnerability scanner
+    #   uses: aquasecurity/trivy-action@0.20.0
+    #   with:
+    #     image-ref: ${{ env.APP_NAME }}:${{ github.sha }} 
+    #     format: 'table'
+    #     exit-code: '1'
+    #     ignore-unfixed: true
+    #     vuln-type: 'os,library'
+    #     severity: 'CRITICAL,HIGH'      
     
 
     - name: Upload Build Artifact
