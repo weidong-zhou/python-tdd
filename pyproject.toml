@@ -11,7 +11,7 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "gicinema"
+name = "cinema"
 version = "0.0.1"
 dependencies = [
     "jinja2"
