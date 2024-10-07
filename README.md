@@ -3,14 +3,6 @@
 ## Assumptions
 
  - When col is even, prioritize the left middle seat over right middle seat. 
- - 
-
-## Setup
-
-python -m venv env
-source env/bin/activate
-pip install -r requirements.txt
-export PYTHONPATH=./src
 
 ## Design
 
@@ -18,7 +10,9 @@ export PYTHONPATH=./src
 * Helper.py: Non-class generic function
 * booking_flow: Menu based operation 
 
-Refer to doc.md for pydoc.
+**Refer to pydoc.md for pydoc.**
 
 # Demo
-* Incuded in CI/CD  - End to End Test
+
+* Included in CI/CD - End to End Test
+* Run docker image as shown in [Packages] (https://github.com/weidong-zhou/python-tdd/pkgs/container/cinema) 
