@@ -12,4 +12,4 @@ COPY dist/$APP_DIST /app/
 RUN pip3 install $APP_DIST
 RUN rm $APP_DIST
 
-CMD "python3" "-m" "cinema"
+CMD "python3" "-m" "booking_flow"
