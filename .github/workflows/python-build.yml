@@ -49,6 +49,7 @@ jobs:
         { echo -e "APP_NAME=$APP_NAME";
         echo -e "APP_VERSION=$APP_VERSION";
         echo -e "GHCR_REGISTRY=ghcr.io/${{ github.actor }}/$APP_NAME";
+        }
 
     - name: Unit Test with pytest
       run: |
