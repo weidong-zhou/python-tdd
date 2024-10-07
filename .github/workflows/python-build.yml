@@ -4,6 +4,7 @@ name: Python Build and Test
 env:
   APP_NAME: cinema
   APP_VERSION: 0.0.1
+  GHCR_REGISTRY: e.g. ghcr.io/xxx
   # placeholder for readability, override later 
 
 # simple git flow for single developer with linear development  
