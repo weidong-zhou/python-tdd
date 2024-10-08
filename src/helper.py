@@ -19,8 +19,8 @@ def render_template(template, **context):
 
 def print_map(cinema, map_mode=1, selected=None, booking_id=None):
     """
-    Print seat map
-    Mode 1: Taken Seat -> #, ( MUST define ) Selected Seat -> O
+    Print seat map \
+    Mode 1: Taken Seat -> #, ( MUST define ) Selected Seat -> O \
     Mode 2: Taken Seat -> #, (optional) same Booking ID -> O
     """
     return (render_template("map.j2", map_mode=map_mode, booking_id=booking_id,
@@ -49,8 +49,8 @@ def print_map(cinema, map_mode=1, selected=None, booking_id=None):
 
 def print_menu(cinema, action_mode=1):
     """
-    Print seat map
-    Mode 1: Taken Seat -> #
+    Print seat map \
+    Mode 1: Taken Seat -> # \
     Mode 2: Taken Seat -> #, Selected Seat -> O
     """
     return (render_template("menu.j2", action_mode=action_mode, num_seats=cinema.seat_available(), title=cinema.title))
@@ -65,7 +65,7 @@ def print_menu(cinema, action_mode=1):
 
 def seat_id_from_label(seat_label=""):
     """
-    Convert B03 -> (1, 2)
+    E.g Convert B03 -> (1, 2)
     """
 
     if re.search('^[A-Z]\\d+$', seat_label):
@@ -76,7 +76,7 @@ def seat_id_from_label(seat_label=""):
 
 def seat_label_from_id(row, col):
     """
-    Convert ( 1,1)  => B2
+    E.g Convert ( 1,1)  => B2
     """
     return ("{}{}".format(chr(row+ord('A')), str(col+1)))
 

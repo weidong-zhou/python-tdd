@@ -11,11 +11,7 @@ class booking_flow()
 ```
 
 Properties:
-    title, string 
-    row, int 
-    col, int
-    booking_id, int - current booking ID, start from 1
-    cinema - cinema object
+    title, string             row, int             col, int             booking_id, int - current booking ID, start from 1             cinema - cinema object
 
 <a id="booking_flow.booking_flow.main"></a>
 
@@ -93,9 +89,7 @@ Helper to render j2
 def print_map(cinema, map_mode=1, selected=None, booking_id=None)
 ```
 
-Print seat map
-Mode 1: Taken Seat -> #, ( MUST define ) Selected Seat -> O
-Mode 2: Taken Seat -> #, (optional) same Booking ID -> O
+Print seat map     Mode 1: Taken Seat -> #, ( MUST define ) Selected Seat -> O     Mode 2: Taken Seat -> #, (optional) same Booking ID -> O
 
 <a id="helper.print_menu"></a>
 
@@ -105,9 +99,7 @@ Mode 2: Taken Seat -> #, (optional) same Booking ID -> O
 def print_menu(cinema, action_mode=1)
 ```
 
-Print seat map
-Mode 1: Taken Seat -> #
-Mode 2: Taken Seat -> #, Selected Seat -> O
+Print seat map     Mode 1: Taken Seat -> #     Mode 2: Taken Seat -> #, Selected Seat -> O
 
 <a id="helper.seat_id_from_label"></a>
 
@@ -117,7 +109,7 @@ Mode 2: Taken Seat -> #, Selected Seat -> O
 def seat_id_from_label(seat_label="")
 ```
 
-Convert B03 -> (1, 2)
+E.g Convert B03 -> (1, 2)
 
 <a id="helper.seat_label_from_id"></a>
 
@@ -127,7 +119,7 @@ Convert B03 -> (1, 2)
 def seat_label_from_id(row, col)
 ```
 
-Convert ( 1,1)  => B2
+E.g Convert ( 1,1)  => B2
 
 <a id="helper.mock_seat_map"></a>
 
@@ -152,11 +144,7 @@ class cinema()
 ```
 
 Properties:
-    title, string 
-    row, int 
-    col, int
-    booking_id, int - current booking ID, start from 1
-    cinema_map - 2D array of dict, e.g.[1][3]={"row_label": B, "col_label": 4, "booking": "2"})
+    title, string             row, int             col, int             booking_id, int - current booking ID, start from 1             cinema_map - 2D array of dict, e.g.[1][3]={"row_label": B, "col_label": 4, "booking": "2"})
 
 <a id="cinema.cinema.__new__"></a>
 
@@ -186,8 +174,7 @@ Init class param and create 2D array of cinema map
 def create_cinema_map()
 ```
 
-Create 2D map for the cinema, with Dict of label( Not used) and booking 
-Note that the map is in reversed ROW order
+Create 2D map for the cinema, with Dict of label( Not used) and booking         Note that the map is in reversed ROW order
 
 <a id="cinema.cinema.auto_booking"></a>
 
@@ -197,10 +184,7 @@ Note that the map is in reversed ROW order
 def auto_booking(num_ticket=4, cinema_map_preview=None, start_row=None)
 ```
 
-Get default seat
-Param: cinema_map_preview and start_row must be define at the same time to continue for custom booking
-Return: 2D array marked by "O"
-TOOD: DRY the code.
+Get default seat         Param: cinema_map_preview and start_row must be define at the same time to continue for custom booking         Return: 2D array marked by "O"         TOOD: DRY the code.
 
 <a id="cinema.cinema.custom_booking"></a>
 
@@ -210,10 +194,7 @@ TOOD: DRY the code.
 def custom_booking(num_ticket=4, start_row=0, start_col=0)
 ```
 
-Get default seat, without updating back.
-start_row =0, start_col=0 -> Equal to auto book
-return 2D array marked by O
-TOOD: DRY the code.
+Get default seat, without updating back.         start_row =0, start_col=0 -> Equal to auto book         return 2D array marked by O         TOOD: DRY the code.
 
 <a id="cinema.cinema.save_booking"></a>
 
@@ -223,8 +204,7 @@ TOOD: DRY the code.
 def save_booking(cinema_map_preview, booking_id)
 ```
 
-Commit booking into cinema map ( i.e. database but in running memory)
-Update cinema_map booking_id to actual booking ID.
+Commit booking into cinema map ( i.e. database but in running memory)         Update cinema_map booking_id to actual booking ID.
 
 <a id="cinema.cinema.get_booking"></a>
 
@@ -234,8 +214,7 @@ Update cinema_map booking_id to actual booking ID.
 def get_booking(booking_id)
 ```
 
-Get booking ID
-return 2D array of booking ID, marked by O
+Get booking ID         return 2D array of booking ID, marked by O
 
 <a id="cinema.cinema.seat_available"></a>
 

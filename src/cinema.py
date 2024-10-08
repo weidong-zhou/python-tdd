@@ -7,10 +7,10 @@ from helper import render_template, print_map
 class cinema():
     """
         Properties:
-            title, string 
-            row, int 
-            col, int
-            booking_id, int - current booking ID, start from 1
+            title, string \
+            row, int \
+            col, int \
+            booking_id, int - current booking ID, start from 1 \
             cinema_map - 2D array of dict, e.g.[1][3]={"row_label": B, "col_label": 4, "booking": "2"})
     """
 
@@ -36,7 +36,7 @@ class cinema():
 
     def create_cinema_map(self):
         """
-        Create 2D map for the cinema, with Dict of label( Not used) and booking 
+        Create 2D map for the cinema, with Dict of label( Not used) and booking \
         Note that the map is in reversed ROW order 
         """
         cinema_map = []
@@ -52,9 +52,9 @@ class cinema():
 
     def auto_booking(self, num_ticket=4, cinema_map_preview=None, start_row=None):
         """
-        Get default seat
-        Param: cinema_map_preview and start_row must be define at the same time to continue for custom booking 
-        Return: 2D array marked by "O"
+        Get default seat \
+        Param: cinema_map_preview and start_row must be define at the same time to continue for custom booking \
+        Return: 2D array marked by "O" \
         TOOD: DRY the code. 
 
         """
@@ -91,9 +91,9 @@ class cinema():
 
     def custom_booking(self, num_ticket=4, start_row=0, start_col=0):
         """
-        Get default seat, without updating back.
-        start_row =0, start_col=0 -> Equal to auto book
-        return 2D array marked by O
+        Get default seat, without updating back. \
+        start_row =0, start_col=0 -> Equal to auto book \
+        return 2D array marked by O \
         TOOD: DRY the code. 
         """
         cinema_map_preview = deepcopy(self.cinema_map)
@@ -114,7 +114,7 @@ class cinema():
 
     def save_booking(self, cinema_map_preview, booking_id):
         """
-        Commit booking into cinema map ( i.e. database but in running memory)
+        Commit booking into cinema map ( i.e. database but in running memory) \
         Update cinema_map booking_id to actual booking ID.
         """
         for c in range(self.row):
@@ -125,7 +125,7 @@ class cinema():
 
     def get_booking(self, booking_id):
         """
-        Get booking ID
+        Get booking ID \
         return 2D array of booking ID, marked by O
         """
         cinema_map_preview = deepcopy(self.cinema_map)
