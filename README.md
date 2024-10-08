@@ -16,21 +16,21 @@ Simple Python application for Cinema booking
 
 ## files
 
-src
-├── booking_flow.py
-├── cinema.py
-├── helper.py
-├── __init__.py
-└── templates
-    ├── map.j2
-    └── menu.j2
+    src
+    ├── booking_flow.py
+    ├── cinema.py
+    ├── helper.py
+    ├── __init__.py
+    └── templates
+        ├── map.j2
+        └── menu.j2
+    tests
+    ├── __init__.py
+    ├── test_booking_end_to_end.py
+    ├── test_booking_flow.py
+    ├── test_cinema.py
+    └── test_helper.py
 
-tests
-├── __init__.py
-├── test_booking_end_to_end.py
-├── test_booking_flow.py
-├── test_cinema.py
-└── test_helper.py
 
 
 ## internal function docs
