@@ -10,6 +10,13 @@
 class booking_flow()
 ```
 
+Properties:
+    title, string 
+    row, int 
+    col, int
+    booking_id, int - current booking ID, start from 1
+    cinema - cinema object
+
 <a id="booking_flow.booking_flow.main"></a>
 
 #### main
@@ -76,7 +83,7 @@ Display booking
 def render_template(template, **context)
 ```
 
-Helper for render j2
+Helper to render j2
 
 <a id="helper.print_map"></a>
 
@@ -144,6 +151,13 @@ Mock booking by updating seat map manually
 class cinema()
 ```
 
+Properties:
+    title, string 
+    row, int 
+    col, int
+    booking_id, int - current booking ID, start from 1
+    cinema_map - 2D array of dict, e.g.[1][3]={"row_label": B, "col_label": 4, "booking": "2"})
+
 <a id="cinema.cinema.__new__"></a>
 
 #### \_\_new\_\_
@@ -185,8 +199,8 @@ def auto_booking(num_ticket=4, cinema_map_preview=None, start_row=None)
 
 Get default seat
 Param: cinema_map_preview and start_row must be define at the same time to continue for custom booking
-Return: 2D array marked by O
-Note: Should be called by custom_booking.
+Return: 2D array marked by "O"
+TOOD: DRY the code.
 
 <a id="cinema.cinema.custom_booking"></a>
 
@@ -199,6 +213,7 @@ def custom_booking(num_ticket=4, start_row=0, start_col=0)
 Get default seat, without updating back.
 start_row =0, start_col=0 -> Equal to auto book
 return 2D array marked by O
+TOOD: DRY the code.
 
 <a id="cinema.cinema.save_booking"></a>
 
@@ -209,6 +224,7 @@ def save_booking(cinema_map_preview, booking_id)
 ```
 
 Commit booking into cinema map ( i.e. database but in running memory)
+Update cinema_map booking_id to actual booking ID.
 
 <a id="cinema.cinema.get_booking"></a>
 

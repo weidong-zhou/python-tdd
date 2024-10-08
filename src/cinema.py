@@ -5,6 +5,15 @@ from helper import render_template, print_map
 
 
 class cinema():
+    """
+        Properties:
+            title, string 
+            row, int 
+            col, int
+            booking_id, int - current booking ID, start from 1
+            cinema_map - 2D array of dict, e.g.[1][3]={"row_label": B, "col_label": 4, "booking": "2"})
+    """
+
     def __new__(cls, title, row, col):
         """ 
         input: row max 26, col max 50, none zero
@@ -45,8 +54,8 @@ class cinema():
         """
         Get default seat
         Param: cinema_map_preview and start_row must be define at the same time to continue for custom booking 
-        Return: 2D array marked by O
-        Note: Should be called by custom_booking.
+        Return: 2D array marked by "O"
+        TOOD: DRY the code. 
 
         """
         if cinema_map_preview is None:
@@ -57,14 +66,14 @@ class cinema():
             if start_row is not None and r < start_row:
                 continue
 
-            # odd col, try middle seat
+            # if odd col, try middle most seat first
             if self.col % 2 == 1:
                 if self.cinema_map[r][self.col//2]["booking"] == None:
                     cinema_map_preview[r][self.col//2]["booking"] = "O"
                     num_ticket = num_ticket-1
                     if num_ticket <= 0:
                         return cinema_map_preview
-
+            # split into half and work way down: left most, right most, left most -1, right most -1
             for c in reversed(range(self.col//2)):
                 if self.cinema_map[r][c]["booking"] == None:
                     cinema_map_preview[r][c]["booking"] = "O"
@@ -77,7 +86,7 @@ class cinema():
                     num_ticket = num_ticket-1
                     if num_ticket <= 0:
                         return cinema_map_preview
-
+        # Not return earlier = not enough seat.
         raise ValueError("not_enough_seat")
 
     def custom_booking(self, num_ticket=4, start_row=0, start_col=0):
@@ -85,6 +94,7 @@ class cinema():
         Get default seat, without updating back.
         start_row =0, start_col=0 -> Equal to auto book
         return 2D array marked by O
+        TOOD: DRY the code. 
         """
         cinema_map_preview = deepcopy(self.cinema_map)
         try:
@@ -105,6 +115,7 @@ class cinema():
     def save_booking(self, cinema_map_preview, booking_id):
         """
         Commit booking into cinema map ( i.e. database but in running memory)
+        Update cinema_map booking_id to actual booking ID.
         """
         for c in range(self.row):
             for r in range(self.col):

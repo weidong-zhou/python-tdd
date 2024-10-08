@@ -5,7 +5,7 @@ import re
 
 def render_template(template, **context):
     """
-    Helper for render j2
+    Helper to render j2
     """
     env = Environment(
         loader=FileSystemLoader(pathlib.Path(
