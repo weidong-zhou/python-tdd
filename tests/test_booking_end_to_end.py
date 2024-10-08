@@ -11,7 +11,7 @@ from helper import print_map, seat_label_from_id, mock_seat_map
 from pytest_steps import test_steps
 
 """
-End to end flow
+End to end flow for the senario
 """
 
 

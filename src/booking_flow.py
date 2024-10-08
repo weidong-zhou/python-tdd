@@ -33,7 +33,7 @@ class booking_flow ():
             if len(arr) >= 3 and \
                 (arr[-1].isnumeric() and int(arr[-1]) > 0 and int(arr[-1]) <= 26) and \
                     (arr[-2].isnumeric() and int(arr[-2]) > 0 and int(arr[-2]) <= 50):
-                title = "".join(arr[0:-2])
+                title = " ".join(arr[0:-2])
                 row = int(arr[-2])
                 col = int(arr[-1])
                 break
@@ -139,8 +139,3 @@ class booking_flow ():
                 print("Booking id: GIC{:04d}".format(booking_id))
                 print("Selected Seats:")
                 print(print_map(self.cinema, map_mode=1, selected=self.booking_map))
-
-
-if __name__ == "__main__":
-    b1 = booking_flow()
-    b1.main()

@@ -14,8 +14,6 @@ MAP_DEBUG = False
 
 # @pytest.fixture
 
-
-# Simple, no test
 def debug_map(c1, description, **context):
     """
     print map for debugging
@@ -25,7 +23,10 @@ def debug_map(c1, description, **context):
         print("\n=="+description)
         print(print_map(c1, **context))
 
-# Test Creating Class
+
+"""
+Test Creating Class
+"""
 
 
 @pytest.mark.parametrize("row, col", [(8, 10), (1, 10), (10, 10), (26, 50)])
@@ -40,6 +41,11 @@ def test_cinema_init(row, col):
 
     num_seats = c1.seat_available()
     assert num_seats == (row*col)
+
+
+"""
+Test Creating Class out of boundary
+"""
 
 
 @pytest.mark.parametrize("row, col", [(0, 10), (10, 0), (10, -1), (27, 50), (26, 51)])
@@ -95,10 +101,9 @@ def test_auto_booking(title, row, col, seats_taken, booking_id, num_ticket, star
 
 
 """
-# Invalid booking 
-1.  
-2. 
-3. no enough seat due to taken seats. 
+# Invalid auto booking 
+
+e.g. no enough seat due to taken seats. 
 """
 
 
@@ -126,9 +131,8 @@ def test_auto_booking_invalid(title, row, col, seats_taken, booking_id, num_tick
 
 """
 Test custom_booking() function
-=== Refactored into end to end flow. ===
-# row > max. Col>max is siliently taken as start with next row. 
-=== success ones are refactored into end to end flow. ===
+Use mock to setup env
+=== refactored into end to end flow. ===
 """
 
 
@@ -169,12 +173,13 @@ def test_custom_booking_invalid(title, row, col, seats_taken, booking_id, num_ti
 
 """
 Test save_booking() function
-=== success ones are efactored into end to end flow. ===
+Use mock to setup env
+=== Refactored to end to end flow. ===
 """
+
 
 """
 Test get_booking() function
-=== success ones are refactored into end to end flow. ===
 """
 
 
@@ -187,9 +192,10 @@ def test_get_booking_invalid():
 
 
 """
-Test end to end Booking Flow
+Test Booking Flow: add stages of sequential functions incrementally ( alternative to mocking) 
 Input: c1 with title, row, col, booked seats 
-Assert: new seats are to be reserved + new seats are to be booked 
+Steps: Book, review, confirm and get
+
 
 Cases to consider:
 even, odd col 
