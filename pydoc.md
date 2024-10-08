@@ -10,7 +10,7 @@
 class booking_flow()
 ```
 
-**Properties**  
+**Properties**
     title, string  
     row, int  
     col, int  
@@ -151,7 +151,7 @@ Mock booking by updating seat map manually
 class cinema()
 ```
 
-**Properties**  
+**Properties**:  
     title, string  
     row, int  
     col, int  
@@ -186,7 +186,7 @@ Init class param and create 2D array of cinema map
 def create_cinema_map()
 ```
 
-Create 2D map for the cinema, with Dict of label( Not used) and booking   
+Create 2D map for the cinema, with Dict of label( Not used) and booking  
 Note that the map is in reversed ROW order
 
 <a id="cinema.cinema.auto_booking"></a>
@@ -198,7 +198,6 @@ def auto_booking(num_ticket=4, cinema_map_preview=None, start_row=None)
 ```
 
 Get default seat
-
 Param: cinema_map_preview and start_row must be define at the same time to continue for custom booking
 Return: 2D array marked by "O"
 TOOD: DRY the code.
@@ -211,8 +210,7 @@ TOOD: DRY the code.
 def custom_booking(num_ticket=4, start_row=0, start_col=0)
 ```
 
-Get default seat, without updating back.  
-
+Get custom seat    
 start_row =0, start_col=0 -> Equal to auto book  
 return 2D array marked by O  
 TOOD: DRY the code.

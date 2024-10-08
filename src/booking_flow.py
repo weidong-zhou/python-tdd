@@ -6,11 +6,11 @@ import re
 
 class booking_flow ():
     """
-        Properties:
-            title, string \
-            row, int \
-            col, int \
-            booking_id, int - current booking ID, start from 1 \
+        **Properties**
+            title, string  
+            row, int  
+            col, int  
+            booking_id, int - current booking ID, start from 1  
             cinema - cinema object 
     """
 
